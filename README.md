@@ -176,40 +176,71 @@ dermagraph/
 
 ### Prerequisites
 
-- Rust 1.75+
-- Node.js 18+
-- Solana CLI
-- Noir (nargo) 0.36+
-- Sunspot (for Groth16)
+```bash
+# Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-### 1. Clone & Build
+# Node.js 18+
+# https://nodejs.org/
+
+# Solana CLI
+sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
+
+# Noir (nargo)
+curl -L https://raw.githubusercontent.com/noir-lang/noirup/main/install | bash
+noirup
+
+# Sunspot (Groth16 prover for Solana)
+cargo install sunspot-cli
+```
+
+### 1. Clone & Download Model Weights
 
 ```bash
 git clone https://github.com/STCisGOOD/dermagraph.git
 cd dermagraph
 
+# Download pre-trained CNN weights from release (~45MB)
+mkdir -p crates/biometric-extract/checkpoints
+curl -L -o crates/biometric-extract/checkpoints/best_burn.safetensors \
+  https://github.com/STCisGOOD/dermagraph/releases/download/v1.0.0/best_burn.safetensors
+```
+
+### 2. Configure Environment
+
+```bash
+# Set up web app environment
+cd web-app
+cp .env.example .env.local
+
+# Edit .env.local:
+# - Get a Privy App ID from https://dashboard.privy.io
+# - Set VITE_DAEMON_URL=http://localhost:31415 for local dev
+# - Set VITE_USE_REAL_SOLANA=false for mock mode (no SOL needed)
+```
+
+### 3. Build
+
+```bash
+cd ..  # back to repo root
+
 # Build Rust crates
 cargo build --release
 
 # Build Noir circuit
-cd circuits/person_identity && nargo compile
+cd circuits/person_identity && nargo compile && cd ../..
 
 # Install frontend deps
-cd web-app && npm install
+cd web-app && npm install && cd ..
+
+# Install bridge server deps
+cd bridge-server && npm install && cd ..
 ```
 
-### 2. Deploy to Solana Devnet
+### 4. Run the Demo (Mock Sensor)
 
 ```bash
-cd solana
-anchor build
-anchor deploy --provider.cluster devnet
-```
-
-### 3. Run the Demo
-
-```bash
-# Terminal 1: Daemon (on Pi or with mock sensor)
+# Terminal 1: Daemon with mock sensor
 cargo run --release -p dermagraphd -- --sensor mock
 
 # Terminal 2: Bridge server
@@ -220,6 +251,8 @@ cd web-app && npm run dev
 ```
 
 Open http://localhost:5173 and connect your wallet!
+
+> **Note:** Mock mode simulates fingerprint scans. For real hardware setup with Raspberry Pi + R503 sensor, see [JOURNEY.md](./JOURNEY.md).
 
 ---
 

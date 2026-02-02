@@ -1,0 +1,77 @@
+# Dermagraphd Configuration Example
+# Copy to ~/.config/dermagraphd/config.toml (Linux/macOS)
+# or %APPDATA%\dermagraphd\config.toml (Windows)
+
+# =============================================================================
+# Sensor Configuration
+# =============================================================================
+
+# Sensor type: "Mock", "R503", or "Adafruit"
+# - Mock: Development mode, no hardware required
+# - R503: R503 capacitive fingerprint sensor (recommended for production)
+# - Adafruit: Adafruit optical fingerprint sensor
+sensor_type = "R503"
+
+# Serial port for hardware sensors
+# Raspberry Pi (UART on GPIO 14/15): "/dev/ttyS0" or "/dev/serial0"
+# USB adapter: "/dev/ttyUSB0" (Linux) or "COM3" (Windows)
+sensor_port = "/dev/ttyS0"
+
+# =============================================================================
+# Storage Configuration
+# =============================================================================
+
+# Directory for encrypted identity data
+# Default: ~/.local/share/dermagraphd (Linux)
+# data_dir = "/home/pi/.dermagraphd"
+
+# =============================================================================
+# Server Configuration
+# =============================================================================
+
+# HTTP API port
+http_port = 31415
+
+# Enable Unix socket (recommended for local IPC on Linux/macOS)
+unix_socket = true
+socket_path = "/tmp/dermagraphd.sock"
+
+# =============================================================================
+# Cryptography Configuration
+# =============================================================================
+
+# Turing diffusion iterations (higher = more secure, slower)
+# Recommended: 64 for production, 16 for testing
+turing_iterations = 64
+
+# =============================================================================
+# ZK Proof Configuration (optional)
+# =============================================================================
+
+# Path to Noir circuit directory
+# Required for proof generation (/prove endpoint)
+# circuit_dir = "/path/to/circuits/spectral_identity"
+
+# =============================================================================
+# Raspberry Pi R503 Wiring Reference
+# =============================================================================
+#
+# R503 Wire   | Pi GPIO Pin | Function
+# ------------|-------------|------------------
+# Red (VCC)   | Pin 4       | 5V Power
+# Black (GND) | Pin 6       | Ground
+# Yellow (TX) | Pin 10      | GPIO 15 (RXD)
+# Green (RX)  | Pin 8       | GPIO 14 (TXD)
+# Blue (Touch)| Pin 7       | GPIO 4 (optional)
+# White (3.3V)| Pin 1       | 3.3V (for logic)
+#
+# Important: Enable UART on Raspberry Pi:
+# 1. sudo raspi-config -> Interface Options -> Serial Port
+# 2. Disable login shell over serial
+# 3. Enable serial hardware
+# 4. Reboot
+#
+# Or edit /boot/config.txt:
+#   enable_uart=1
+#   dtoverlay=disable-bt  # (if using Pi 3/4 with Bluetooth)
+# =============================================================================

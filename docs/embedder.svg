@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" fill="none">
+  <defs>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EC4E02;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff6b35;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#14F195;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#0a0a0a" rx="12"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="700" height="40" fill="#1a1a1a" rx="12"/>
+  <rect x="0" y="28" width="700" height="12" fill="#1a1a1a"/>
+  <text x="350" y="26" text-anchor="middle" fill="#fff" font-family="monospace" font-size="14" font-weight="bold">FingerprintEmbedder</text>
+
+  <!-- Row 1: Image path -->
+  <!-- Input Image -->
+  <rect x="30" y="60" width="120" height="70" rx="6" fill="#1a1a1a" stroke="#555" stroke-width="1"/>
+  <text x="90" y="85" text-anchor="middle" fill="#fff" font-family="monospace" font-size="11" font-weight="bold">192×192</text>
+  <text x="90" y="102" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Grayscale</text>
+  <text x="90" y="119" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">Image</text>
+
+  <!-- Arrow 1 -->
+  <path d="M150 95 L180 95" stroke="#EC4E02" stroke-width="2"/>
+  <polygon points="190,95 180,90 180,100" fill="#EC4E02"/>
+
+  <!-- ResNet18 -->
+  <rect x="200" y="60" width="130" height="70" rx="6" fill="#1a1a1a" stroke="url(#orangeGrad)" stroke-width="2"/>
+  <text x="265" y="85" text-anchor="middle" fill="#fff" font-family="monospace" font-size="11" font-weight="bold">ResNet18</text>
+  <text x="265" y="102" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Backbone</text>
+  <text x="265" y="119" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">conv→bn→relu×4</text>
+
+  <!-- Arrow 2 -->
+  <path d="M330 95 L360 95" stroke="#EC4E02" stroke-width="2"/>
+  <polygon points="370,95 360,90 360,100" fill="#EC4E02"/>
+
+  <!-- CNN Features -->
+  <rect x="380" y="60" width="140" height="70" rx="6" fill="#1a1a1a" stroke="#555" stroke-width="1"/>
+  <text x="450" y="85" text-anchor="middle" fill="url(#orangeGrad)" font-family="monospace" font-size="11" font-weight="bold">512-dim</text>
+  <text x="450" y="102" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">CNN Features</text>
+
+  <!-- Arrow down from CNN features -->
+  <path d="M450 130 L450 160" stroke="#EC4E02" stroke-width="2"/>
+  <polygon points="450,170 445,160 455,160" fill="#EC4E02"/>
+
+  <!-- Row 2: Classical features path -->
+  <!-- Classical Features -->
+  <rect x="30" y="160" width="120" height="70" rx="6" fill="#1a1a1a" stroke="#555" stroke-width="1"/>
+  <text x="90" y="185" text-anchor="middle" fill="#fff" font-family="monospace" font-size="11" font-weight="bold">Classical</text>
+  <text x="90" y="202" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Features</text>
+  <text x="90" y="219" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">(33-dim)</text>
+
+  <!-- Arrow 3 -->
+  <path d="M150 195 L180 195" stroke="url(#blueGrad)" stroke-width="2"/>
+  <polygon points="190,195 180,190 180,200" fill="#3b82f6"/>
+
+  <!-- Linear Encoder -->
+  <rect x="200" y="160" width="130" height="70" rx="6" fill="#1a1a1a" stroke="url(#blueGrad)" stroke-width="2"/>
+  <text x="265" y="185" text-anchor="middle" fill="#fff" font-family="monospace" font-size="11" font-weight="bold">Linear</text>
+  <text x="265" y="202" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Encoder</text>
+  <text x="265" y="219" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">(64-dim)</text>
+
+  <!-- Arrow 4 -->
+  <path d="M330 195 L360 195" stroke="url(#blueGrad)" stroke-width="2"/>
+  <polygon points="370,195 360,190 360,200" fill="#3b82f6"/>
+
+  <!-- Concat box -->
+  <rect x="380" y="160" width="140" height="70" rx="6" fill="#1a1a1a" stroke="#888" stroke-width="2"/>
+  <text x="450" y="182" text-anchor="middle" fill="#fff" font-family="monospace" font-size="11" font-weight="bold">Concat</text>
+  <text x="450" y="200" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">512 + 64</text>
+  <text x="450" y="218" text-anchor="middle" fill="url(#orangeGrad)" font-family="monospace" font-size="10" font-weight="bold">= 576-dim</text>
+
+  <!-- Arrow down from concat -->
+  <path d="M450 230 L450 255" stroke="#888" stroke-width="2"/>
+  <polygon points="450,265 445,255 455,255" fill="#888"/>
+
+  <!-- Fusion MLP -->
+  <rect x="350" y="270" width="200" height="55" rx="6" fill="#1a1a1a" stroke="url(#greenGrad)" stroke-width="2"/>
+  <text x="450" y="292" text-anchor="middle" fill="#fff" font-family="monospace" font-size="11" font-weight="bold">Fusion MLP</text>
+  <text x="450" y="312" text-anchor="middle" fill="#14F195" font-family="monospace" font-size="10">576 → 256 → 256 → 128</text>
+
+  <!-- Arrow down from fusion -->
+  <path d="M450 325 L450 350" stroke="url(#greenGrad)" stroke-width="2"/>
+  <polygon points="450,360 445,350 455,350" fill="#14F195"/>
+
+  <!-- L2 Normalize -->
+  <rect x="350" y="365" width="200" height="45" rx="6" fill="#1a1a1a" stroke="url(#greenGrad)" stroke-width="2"/>
+  <text x="450" y="385" text-anchor="middle" fill="#fff" font-family="monospace" font-size="11" font-weight="bold">L2 Normalize</text>
+  <text x="450" y="402" text-anchor="middle" fill="#14F195" font-family="monospace" font-size="10">128-dim unit vector</text>
+
+  <!-- Output arrow -->
+  <path d="M550 387 L620 387" stroke="url(#greenGrad)" stroke-width="2"/>
+  <polygon points="630,387 620,382 620,392" fill="#14F195"/>
+
+  <!-- Output label -->
+  <text x="665" y="392" text-anchor="middle" fill="#14F195" font-family="monospace" font-size="11" font-weight="bold">out</text>
+
+</svg>

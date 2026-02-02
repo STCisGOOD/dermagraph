@@ -1,0 +1,42 @@
+[package]
+name = "dermagraph-hardware"
+version = "0.1.0"
+edition = "2021"
+description = "Fingerprint sensor drivers for dermagraphic encryption"
+license = "MIT"
+
+[dependencies]
+# Serial communication
+serialport = "4.2"
+
+# Async runtime
+tokio = { version = "1", features = ["full", "sync", "time"] }
+tokio-serial = "5.4"
+futures = "0.3"
+async-trait = "0.1"
+
+# Image handling
+image = "0.24"
+
+# Error handling
+thiserror = "1.0"
+anyhow = "1.0"
+
+# Logging
+tracing = "0.1"
+
+# Feature extraction
+biometric-extract = { path = "../biometric-extract" }
+turing-core = { path = "../turing-core" }
+
+[features]
+default = ["mock"]
+# Mock sensor for development without hardware
+mock = []
+# Adafruit optical fingerprint sensor support
+adafruit = []
+# R503 capacitive sensor support
+r503 = []
+
+[dev-dependencies]
+tokio-test = "0.4"

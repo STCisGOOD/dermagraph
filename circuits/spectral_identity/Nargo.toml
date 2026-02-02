@@ -1,0 +1,8 @@
+[package]
+name = "spectral_identity"
+type = "bin"
+authors = ["Specter Identity Protocol"]
+compiler_version = ">=1.0.0"
+expression_width = "bounded:4"
+
+[dependencies]

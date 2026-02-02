@@ -1,0 +1,10 @@
+[workspace]
+members = [
+    "person_identity",
+    "spectral_identity",
+]
+
+# Note: The main dermagraph_circuits source is in ./src/
+# For now, use individual circuits via:
+#   cd person_identity && nargo check
+#   cd spectral_identity && nargo check

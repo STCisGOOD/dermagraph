@@ -1,0 +1,85 @@
+[package]
+name = "dermagraphd"
+description = "Dermagraphic encryption daemon - background service for biometric authentication"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "dermagraphd"
+path = "src/main.rs"
+
+[dependencies]
+# Internal crates
+turing-core = { path = "../turing-core" }
+biometric-extract = { path = "../biometric-extract", features = ["contrastive"] }
+noir-witness = { path = "../noir-witness" }
+hardware = { path = "../hardware", package = "dermagraph-hardware", features = ["r503"] }
+
+# Burn (for CNN inference) - use workspace version
+burn = { workspace = true }
+burn-ndarray = { workspace = true }
+
+# Async
+tokio = { workspace = true }
+
+# HTTP server
+axum = { workspace = true }
+hyper = { workspace = true }
+tower = { workspace = true }
+
+# Serialization
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+# CLI
+clap = { workspace = true }
+
+# Storage & Encryption
+sqlx = { workspace = true }
+chacha20poly1305 = { workspace = true }
+directories = { workspace = true }
+argon2 = { workspace = true }
+hkdf = { workspace = true }
+
+# Random number generation
+rand = "0.8"
+
+# Error handling
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+
+# Logging
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+# Hashing
+sha2.workspace = true
+
+# Config
+toml = { workspace = true }
+
+# Sensor
+async-trait = "0.1"
+
+# SSE streaming
+tokio-stream = "0.1"
+futures = "0.3"
+
+# Hex encoding
+hex = "0.4"
+
+# Secure memory handling
+zeroize = { version = "1.7", features = ["derive"] }
+
+# Rate limiting
+governor = "0.6"
+tower_governor = "0.4"
+
+# CORS support for browser access
+tower-http = { version = "0.5", features = ["cors"] }
+
+[dev-dependencies]
+tokio-test = "0.4"

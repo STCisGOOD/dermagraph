@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" fill="none">
+  <defs>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EC4E02;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff6b35;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9945FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#14F195;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="700" fill="#0a0a0a"/>
+
+  <!-- USER DEVICE Section -->
+  <rect x="20" y="20" width="860" height="380" rx="12" fill="#1a1a1a" stroke="#333" stroke-width="2"/>
+  <text x="450" y="50" text-anchor="middle" fill="#888" font-family="monospace" font-size="14" font-weight="bold">USER DEVICE</text>
+
+  <!-- Raspberry Pi Box -->
+  <rect x="40" y="70" width="820" height="250" rx="8" fill="#111" stroke="#EC4E02" stroke-width="2" filter="url(#shadow)"/>
+  <text x="450" y="95" text-anchor="middle" fill="url(#orangeGrad)" font-family="monospace" font-size="13" font-weight="bold">RASPBERRY PI</text>
+
+  <!-- R503 Sensor -->
+  <rect x="60" y="115" width="120" height="90" rx="6" fill="#1a1a1a" stroke="#555" stroke-width="1"/>
+  <text x="120" y="145" text-anchor="middle" fill="#fff" font-family="monospace" font-size="12" font-weight="bold">R503</text>
+  <text x="120" y="165" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Sensor</text>
+  <text x="120" y="185" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">192×192 @ 508 DPI</text>
+
+  <!-- Arrow from sensor -->
+  <path d="M180 160 L210 160" stroke="#EC4E02" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- dermagraphd Box -->
+  <rect x="220" y="110" width="620" height="195" rx="6" fill="#0f0f0f" stroke="#444" stroke-width="1"/>
+  <text x="530" y="135" text-anchor="middle" fill="#fff" font-family="monospace" font-size="12" font-weight="bold">dermagraphd</text>
+
+  <!-- Storage -->
+  <rect x="240" y="150" width="100" height="50" rx="4" fill="#1a1a1a" stroke="#555" stroke-width="1"/>
+  <text x="290" y="175" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Storage</text>
+  <text x="290" y="190" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">(encrypted)</text>
+
+  <!-- CNN Embed -->
+  <rect x="360" y="150" width="100" height="50" rx="4" fill="#1a1a1a" stroke="#555" stroke-width="1"/>
+  <text x="410" y="175" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">CNN</text>
+  <text x="410" y="190" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">Embedder</text>
+
+  <!-- Noir Witness -->
+  <rect x="480" y="150" width="120" height="50" rx="4" fill="#1a1a1a" stroke="#555" stroke-width="1"/>
+  <text x="540" y="175" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Noir Witness</text>
+  <text x="540" y="190" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">Generator</text>
+
+  <!-- X-Lock -->
+  <rect x="620" y="150" width="100" height="50" rx="4" fill="#1a1a1a" stroke="#555" stroke-width="1"/>
+  <text x="670" y="175" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">X-Lock</text>
+  <text x="670" y="190" text-anchor="middle" fill="#666" font-family="monospace" font-size="9">Fuzzy Ext.</text>
+
+  <!-- Arrow down to prover -->
+  <path d="M530 200 L530 220" stroke="#EC4E02" stroke-width="2"/>
+  <polygon points="530,230 525,220 535,220" fill="#EC4E02"/>
+
+  <!-- Groth16 Prover -->
+  <rect x="350" y="235" width="360" height="55" rx="4" fill="#1a1a1a" stroke="url(#orangeGrad)" stroke-width="2"/>
+  <text x="530" y="260" text-anchor="middle" fill="#fff" font-family="monospace" font-size="11" font-weight="bold">Groth16 Prover</text>
+  <text x="530" y="278" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">nargo execute + sunspot prove</text>
+
+  <!-- Arrow down from Pi -->
+  <path d="M450 320 L450 340" stroke="#EC4E02" stroke-width="2"/>
+  <polygon points="450,350 445,340 455,340" fill="#EC4E02"/>
+  <text x="520" y="338" fill="#666" font-family="monospace" font-size="9">HTTP :31415</text>
+
+  <!-- Bridge Server -->
+  <rect x="300" y="355" width="300" height="35" rx="4" fill="#1a1a1a" stroke="#555" stroke-width="1"/>
+  <text x="450" y="378" text-anchor="middle" fill="#888" font-family="monospace" font-size="11">Bridge Server (Node.js)</text>
+
+  <!-- Arrow down from bridge -->
+  <path d="M450 400 L450 420" stroke="#14F195" stroke-width="2"/>
+  <polygon points="450,430 445,420 455,420" fill="#14F195"/>
+  <text x="500" y="418" fill="#666" font-family="monospace" font-size="9">HTTPS</text>
+
+  <!-- WEB BROWSER Section -->
+  <rect x="20" y="440" width="860" height="100" rx="12" fill="#1a1a1a" stroke="#333" stroke-width="2"/>
+  <text x="450" y="465" text-anchor="middle" fill="#888" font-family="monospace" font-size="14" font-weight="bold">WEB BROWSER</text>
+
+  <!-- React Frontend -->
+  <rect x="100" y="480" width="700" height="45" rx="6" fill="#111" stroke="#444" stroke-width="1"/>
+  <text x="160" y="508" fill="#fff" font-family="monospace" font-size="11">Privy Wallet</text>
+  <text x="350" y="508" fill="#fff" font-family="monospace" font-size="11">SSE Events</text>
+  <text x="550" y="508" fill="#fff" font-family="monospace" font-size="11">Solana TX Builder</text>
+  <text x="720" y="508" fill="#888" font-family="monospace" font-size="10">React</text>
+
+  <!-- Arrow down to Solana -->
+  <path d="M450 545 L450 565" stroke="url(#purpleGrad)" stroke-width="2"/>
+  <polygon points="450,575 445,565 455,565" fill="#14F195"/>
+  <text x="480" y="562" fill="#666" font-family="monospace" font-size="9">RPC</text>
+
+  <!-- SOLANA Section -->
+  <rect x="20" y="585" width="860" height="100" rx="12" fill="#0f0f1a" stroke="url(#purpleGrad)" stroke-width="2" filter="url(#shadow)"/>
+  <text x="450" y="610" text-anchor="middle" fill="url(#purpleGrad)" font-family="monospace" font-size="14" font-weight="bold">SOLANA DEVNET</text>
+
+  <!-- DAO Voting Program -->
+  <rect x="60" y="625" width="250" height="45" rx="4" fill="#1a1a2a" stroke="#9945FF" stroke-width="1"/>
+  <text x="185" y="645" text-anchor="middle" fill="#fff" font-family="monospace" font-size="10" font-weight="bold">DAO Voting Program</text>
+  <text x="185" y="660" text-anchor="middle" fill="#666" font-family="monospace" font-size="8">CN5wNB...3DA2</text>
+
+  <!-- Arrow CPI -->
+  <path d="M310 648 L360 648" stroke="#9945FF" stroke-width="2"/>
+  <polygon points="370,648 360,643 360,653" fill="#9945FF"/>
+  <text x="335" y="640" fill="#666" font-family="monospace" font-size="8">CPI</text>
+
+  <!-- Sunspot Verifier -->
+  <rect x="380" y="625" width="250" height="45" rx="4" fill="#1a1a2a" stroke="#14F195" stroke-width="1"/>
+  <text x="505" y="645" text-anchor="middle" fill="#14F195" font-family="monospace" font-size="10" font-weight="bold">Sunspot Verifier</text>
+  <text x="505" y="660" text-anchor="middle" fill="#666" font-family="monospace" font-size="8">Groth16 on BN254</text>
+
+  <!-- Accounts -->
+  <rect x="660" y="625" width="200" height="45" rx="4" fill="#1a1a2a" stroke="#444" stroke-width="1"/>
+  <text x="760" y="645" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Nullifier Records</text>
+  <text x="760" y="660" text-anchor="middle" fill="#666" font-family="monospace" font-size="8">(sybil prevention)</text>
+</svg>

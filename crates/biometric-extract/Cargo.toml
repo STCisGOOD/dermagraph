@@ -1,0 +1,71 @@
+[package]
+name = "biometric-extract"
+version = "0.1.0"
+edition = "2021"
+description = "Fingerprint minutiae extraction and ridge graph construction"
+license = "MIT"
+
+[[bin]]
+name = "train-embedder"
+path = "src/bin/train.rs"
+required-features = ["contrastive"]
+
+[features]
+default = ["contrastive"]
+contrastive = ["burn", "burn-ndarray", "burn-train", "burn-import", "rand", "rand_chacha", "clap", "sha2", "tracing-subscriber", "safetensors", "half"]
+gpu = ["contrastive", "burn-wgpu"]
+# LibTorch backend - uses PyTorch's battle-tested autodiff (recommended for ResNet training)
+libtorch = ["contrastive", "burn-tch"]
+
+[dependencies]
+# Core math
+turing-core = { path = "../turing-core" }
+nalgebra = "0.32"
+
+# Image processing
+image = "0.24"
+imageproc = "0.23"
+
+# Feature detection
+ndarray = "0.15"
+
+# Deep learning (contrastive person-level embeddings)
+burn = { workspace = true, optional = true }
+burn-ndarray = { workspace = true, optional = true }
+burn-wgpu = { workspace = true, optional = true }
+burn-tch = { workspace = true, optional = true }
+burn-train = { workspace = true, optional = true }
+burn-import = { workspace = true, optional = true }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Error handling
+thiserror = "1.0"
+anyhow = "1.0"
+
+# Async
+tokio = { version = "1", features = ["full"] }
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"], optional = true }
+
+# CLI (for training binary)
+clap = { workspace = true, optional = true }
+
+# Random sampling
+rand = { version = "0.8", optional = true }
+rand_chacha = { version = "0.3", optional = true }
+
+# Hashing (for nullifiers)
+sha2 = { version = "0.10", optional = true }
+
+# Safetensors loading (for tch-trained weights)
+safetensors = { version = "0.4", optional = true }
+half = { version = "2.3", optional = true }
+
+[dev-dependencies]
+tokio-test = "0.4"
+png = "0.17"

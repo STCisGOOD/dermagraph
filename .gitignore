@@ -1,0 +1,50 @@
+# Rust
+target/
+Cargo.lock
+*.rs.bk
+
+# Node
+node_modules/
+dist/
+.env
+.env.local
+
+# Noir
+circuits/target/
+circuits/*/target/
+*.pk
+*.vk
+*.proof
+*.pw
+*.ccs
+*.so
+Prover.toml
+Verifier.toml
+
+# Solana
+.anchor/
+test-ledger/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets (NEVER commit these)
+*.pem
+*.key
+id.json
+keypair.json
+
+# Storage (generated at runtime)
+*.enc
+*.bin
+!scripts/*.bin
+
+# Logs
+*.log

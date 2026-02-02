@@ -1,0 +1,21 @@
+[features]
+seeds = false
+skip-lint = false
+
+[programs.localnet]
+dao_voting = "CN5wNB5qChhKyxaFJBW7WmBvqm2b9THCGDYZnUfB3DA2"
+sth_registry = "BBgRCsGAHwyie2F3kTf2ahNiBJwxzr6f6oF536ZMNMzG"
+
+[programs.devnet]
+dao_voting = "CN5wNB5qChhKyxaFJBW7WmBvqm2b9THCGDYZnUfB3DA2"
+sth_registry = "BBgRCsGAHwyie2F3kTf2ahNiBJwxzr6f6oF536ZMNMzG"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

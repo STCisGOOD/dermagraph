@@ -252,7 +252,7 @@ cd web-app && npm run dev
 
 Open http://localhost:5173 and connect your wallet!
 
-> **Note:** Mock mode simulates fingerprint scans. For real hardware setup with Raspberry Pi + R503 sensor, see [JOURNEY.md](./JOURNEY.md).
+> **Note:** Mock mode simulates fingerprint scans. For real hardware setup with Raspberry Pi + R503 sensor, see [SETUP.md](./SETUP.md).
 
 ---
 

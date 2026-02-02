@@ -52,7 +52,7 @@ Your fingerprint generates a **deterministic nullifier** through zero-knowledge 
 
 ### Real Hardware
 - R503 capacitive fingerprint sensor
-- Runs on Raspberry Pi Zero 2 W
+- Runs on Raspberry Pi 4
 - Production-ready daemon with encrypted storage
 
 ---
@@ -133,9 +133,7 @@ Middle ──┘     ↑                             (for same scope)
          ~94% cross-finger TAR
 ```
 
-**→ [Read the full CNN training guide](./CNN.md)**
-
-Based on: [Columbia University research](https://www.science.org/doi/10.1126/sciadv.adi0329) (Science Advances 2024)
+Based on [Columbia University research](https://www.science.org/doi/10.1126/sciadv.adi0329) (Science Advances 2024). See [ARCHITECTURE.md](./ARCHITECTURE.md) for technical details.
 
 ### X-Lock Fuzzy Extractor
 
@@ -227,9 +225,9 @@ Open http://localhost:5173 and connect your wallet!
 
 ## Hardware Setup
 
-**Minimum Hardware (~$41):**
-- R503 Capacitive Fingerprint Sensor (~$15)
-- Raspberry Pi Zero 2 W (~$15)
+**Minimum Hardware (~$60):**
+- R503 Capacitive Fingerprint Sensor (~$18)
+- Raspberry Pi 4 (~$35)
 - MicroSD card (~$8)
 - Jumper wires (~$3)
 
@@ -243,7 +241,6 @@ TX (Yellow)→  GPIO15/RX (Pin 10)
 RX (Green) →  GPIO14/TX (Pin 8)
 ```
 
-See [HARDWARE.md](./HARDWARE.md) for detailed setup instructions.
 
 ---
 
@@ -358,7 +355,11 @@ Dermagraph builds on peer-reviewed research:
    Dodis et al. "Fuzzy Extractors: How to Generate Strong Keys from Biometrics"
    *SIAM Journal on Computing* (2008)
 
-3. **Poseidon Hash**
+3. **X-Lock Construction**
+   Kurbatov et al. "Unforgettable Fuzzy Extractor: Practical Construction and Security Model"
+   *IACR ePrint* (2025) — [ePrint 2025/1799](https://eprint.iacr.org/2025/1799)
+
+4. **Poseidon Hash**
    Grassi et al. "Poseidon: A New Hash Function for Zero-Knowledge Proof Systems"
    *USENIX Security* (2021)
 
@@ -368,7 +369,7 @@ Dermagraph builds on peer-reviewed research:
 
 Built for the [Solana Privacy Hackathon](https://solana.com/privacyhack#resources) by:
 
-- **[@STCisGOOD](https://github.com/STCisGOOD)** — Cryptography, ZK & Solana
+- **[@STCisGOOD](https://github.com/STCisGOOD)** — Building systems that amplify individual expression and cultural evolution.
 
 ---
 
@@ -376,8 +377,3 @@ Built for the [Solana Privacy Hackathon](https://solana.com/privacyhack#resource
 
 MIT License. See [LICENSE](./LICENSE).
 
----
-
-<p align="center">
-  <strong>Your fingerprint. Your identity. Your privacy.</strong>
-</p>

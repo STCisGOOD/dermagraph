@@ -126,34 +126,6 @@ MIT licensed. Any project can integrate:
 - Proof of humanity for social graphs
 - Quadratic funding with genuine users
 
----
-
-## Future Roadmap
-
-### Q1 2026
-- [ ] Mobile app (iOS/Android fingerprint sensors)
-- [ ] Multi-device sync
-- [ ] Light Protocol compressed accounts for nullifiers
-
-### Q2 2026
-- [ ] Decentralized identity registry
-- [ ] Threshold signatures for shared identity
-- [ ] Enterprise API
-
-### Q3 2026
-- [ ] SDK for easy integration
-- [ ] Cross-chain identity (Noir proofs on Ethereum)
-- [ ] Hardware security module integration
-
----
-
-## Team
-
-We're a team of cryptographers and systems engineers passionate about privacy.
-
-- Built production ZK systems before
-- Deep experience with Solana, Noir, and biometric systems
-- Committed to open-source development
 
 ---
 

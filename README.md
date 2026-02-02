@@ -258,9 +258,9 @@ Open http://localhost:5173 and connect your wallet!
 
 ## Hardware Setup
 
-**Minimum Hardware (~$60):**
-- R503 Capacitive Fingerprint Sensor (~$18)
-- Raspberry Pi 4 (~$35)
+**Minimum Hardware (~$140):**
+- R503 Capacitive Fingerprint Sensor (~$25)
+- Raspberry Pi 4 (~$100)
 - MicroSD card (~$8)
 - Jumper wires (~$3)
 

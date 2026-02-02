@@ -2,12 +2,12 @@
 
 ## Hardware Requirements
 
-### Shopping List (~$60)
+### Shopping List (~$140)
 
 | Item | Link | Cost |
 |------|------|------|
-| Raspberry Pi 4 (2GB+) | [Amazon](https://www.amazon.com/dp/B0899VXM8F?ref=ppx_yo2ov_dt_b_fed_asin_title) | $35 |
-| R503 Fingerprint Sensor | [Amazon](https://www.amazon.com/dp/B09MLBNY78?ref=ppx_yo2ov_dt_b_fed_asin_title) | $18 |
+| Raspberry Pi 4 (2GB+) | [Amazon](https://www.amazon.com/dp/B0899VXM8F?ref=ppx_yo2ov_dt_b_fed_asin_title) | $100 |
+| R503 Fingerprint Sensor | [Amazon](https://www.amazon.com/dp/B09MLBNY78?ref=ppx_yo2ov_dt_b_fed_asin_title) | $25 |
 | USB-C Power Supply (5V/3A) | Any | $8 |
 | MicroSD Card (32GB+) | Any | $6 |
 | Jumper wires (female-female) | Any | $3 |

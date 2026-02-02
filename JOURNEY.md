@@ -13,12 +13,12 @@ This document provides a technical chronicle of building Dermagraph from initial
 The project began with a core constraint: build biometric identity verification without expensive specialized hardware.
 
 **Components selected:**
-- Raspberry Pi 4 (2GB) — $35
-- R503 Capacitive Fingerprint Sensor — $18
+- Raspberry Pi 4 (2GB) — $100
+- R503 Capacitive Fingerprint Sensor — $25
 - Jumper wires — $3
 - USB-C power supply — $8
 
-**Total cost: approximately $60** (compared to $500+ for alternatives like WorldCoin's Orb)
+**Total cost: approximately $140** (compared to $500+ for alternatives like WorldCoin's Orb)
 
 ### Day 3: Hardware Assembly
 

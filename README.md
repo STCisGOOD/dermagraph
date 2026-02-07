@@ -4,6 +4,11 @@
 
 > Your fingerprint becomes your cryptographic identity—without ever leaving your device.
 
+
+https://github.com/user-attachments/assets/4190471e-2499-4369-a8e1-662d5362f04c
+
+
+
 [![Solana](https://img.shields.io/badge/Solana-Devnet-9945FF?logo=solana)](https://solana.com)
 [![Noir](https://img.shields.io/badge/Noir-ZK%20Circuits-000000)](https://noir-lang.org)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
